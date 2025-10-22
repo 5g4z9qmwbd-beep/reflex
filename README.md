@@ -1,67 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/reflex-dev/reflex/main/docs/images/reflex.svg" alt="Reflex Logo" width="300px">
-
-<hr>
-
-### **✨ Performant, customizable web apps in pure Python. Deploy in seconds. ✨**
-
-[![PyPI version](https://badge.fury.io/py/reflex.svg)](https://badge.fury.io/py/reflex)
-![versions](https://img.shields.io/pypi/pyversions/reflex.svg)
-[![Documentation](https://img.shields.io/badge/Documentation%20-Introduction%20-%20%23007ec6)](https://reflex.dev/docs/getting-started/introduction)
-[![PyPI Downloads](https://static.pepy.tech/badge/reflex)](https://pepy.tech/projects/reflex)
-[![Discord](https://img.shields.io/discord/1029853095527727165?color=%237289da&label=Discord)](https://discord.gg/T5WSbC2YtQ)
-[![Twitter](https://img.shields.io/twitter/follow/getreflex)](https://x.com/getreflex)
-
-</div>
-
----
-
-[English](https://github.com/reflex-dev/reflex/blob/main/README.md) | [简体中文](https://github.com/reflex-dev/reflex/blob/main/docs/zh/zh_cn/README.md) | [繁體中文](https://github.com/reflex-dev/reflex/blob/main/docs/zh/zh_tw/README.md) | [Türkçe](https://github.com/reflex-dev/reflex/blob/main/docs/tr/README.md) | [हिंदी](https://github.com/reflex-dev/reflex/blob/main/docs/in/README.md) | [Português (Brasil)](https://github.com/reflex-dev/reflex/blob/main/docs/pt/pt_br/README.md) | [Italiano](https://github.com/reflex-dev/reflex/blob/main/docs/it/README.md) | [Español](https://github.com/reflex-dev/reflex/blob/main/docs/es/README.md) | [한국어](https://github.com/reflex-dev/reflex/blob/main/docs/kr/README.md) | [日本語](https://github.com/reflex-dev/reflex/blob/main/docs/ja/README.md) | [Deutsch](https://github.com/reflex-dev/reflex/blob/main/docs/de/README.md) | [Persian (پارسی)](https://github.com/reflex-dev/reflex/blob/main/docs/pe/README.md) | [Tiếng Việt](https://github.com/reflex-dev/reflex/blob/main/docs/vi/README.md)
-
----
-
-> [!NOTE]
-> 🚀 **Try [Reflex Build](https://build.reflex.dev/)** – our AI-powered app builder that generates full-stack Reflex applications in seconds.
-
----
-
-# Introduction
-
-Reflex is a library to build full-stack web apps in pure Python.
-
-Key features:
-
-- **Pure Python** - Write your app's frontend and backend all in Python, no need to learn Javascript.
-- **Full Flexibility** - Reflex is easy to get started with, but can also scale to complex apps.
-- **Deploy Instantly** - After building, deploy your app with a [single command](https://reflex.dev/docs/hosting/deploy-quick-start/) or host it on your own server.
-
-See our [architecture page](https://reflex.dev/blog/2024-03-21-reflex-architecture/#the-reflex-architecture) to learn how Reflex works under the hood.
-
-## ⚙️ Installation
-
-Open a terminal and run (Requires Python 3.10+):
-
-```bash
-pip install reflex
-```
-
-## 🥳 Create your first app
-
-Installing `reflex` also installs the `reflex` command line tool.
-
-Test that the install was successful by creating a new project. (Replace `my_app_name` with your project name):
-
-```bash
-mkdir my_app_name
-cd my_app_name
-reflex init
-```
-
-This command initializes a template app in your new directory.
-
-You can run this app in development mode:
-
-```bash
+<img 
 reflex run
 ```
 
@@ -113,63 +51,7 @@ class State(rx.State):
 
 
 def index():
-    return rx.center(
-        rx.vstack(
-            rx.heading("DALL-E", font_size="1.5em"),
-            rx.input(
-                placeholder="Enter a prompt..",
-                on_blur=State.set_prompt,
-                width="25em",
-            ),
-            rx.button(
-                "Generate Image",
-                on_click=State.get_image,
-                width="25em",
-                loading=State.processing
-            ),
-            rx.cond(
-                State.complete,
-                rx.image(src=State.image_url, width="20em"),
-            ),
-            align="center",
-        ),
-        width="100%",
-        height="100vh",
-    )
-
-# Add state and page to the app.
-app = rx.App()
-app.add_page(index, title="Reflex:DALL-E")
-```
-
-## Let's break this down.
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/reflex-dev/reflex/main/docs/images/dalle_colored_code_example.png" alt="Explaining the differences between backend and frontend parts of the DALL-E app." width="900" />
-</div>
-
-### **Reflex UI**
-
-Let's start with the UI.
-
-```python
-def index():
-    return rx.center(
-        ...
-    )
-```
-
-This `index` function defines the frontend of the app.
-
-We use different components such as `center`, `vstack`, `input`, and `button` to build the frontend. Components can be nested within each other
-to create complex layouts. And you can use keyword args to style them with the full power of CSS.
-
-Reflex comes with [60+ built-in components](https://reflex.dev/docs/library) to help you get started. We are actively adding more components, and it's easy to [create your own components](https://reflex.dev/docs/wrapping-react/overview/).
-
-### **State**
-
-Reflex represents your UI as a function of your state.
-
+    
 ```python
 class State(rx.State):
     """The app state."""
